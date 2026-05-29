@@ -19,6 +19,11 @@ const activeSessions = {};
 // 1. REST API Endpoints (For the Chatbot)
 // ==========================================
 
+// Add a default home route just to verify deployment
+app.get('/', (req, res) => {
+  res.send('🚀 WebRTC Signaling and Control Plane Server is running smoothly!');
+});
+
 // Chatbot hits this to create a room
 app.post('/api/webrtc/session/create', (req, { res }) => {
   const { userId } = req.body;
